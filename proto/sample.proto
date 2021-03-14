@@ -15,6 +15,11 @@ service SayHello {
       body: "*"
     };
   };
+  rpc Proxy (ProxyRequest) returns (ProxyResponse) {
+    option (google.api.http) = {
+      get: "/api/proxy"
+    };
+  };
 }
 
 message HelloRequest {
@@ -32,5 +37,13 @@ message CreateUserRequest {
 message CreateUserResponse {
   string encrypted_id = 1;
   string name = 2;
+}
+
+message ProxyRequest {
+  string userName = 1;
+}
+
+message ProxyResponse {
+  string response = 1;
 }
 

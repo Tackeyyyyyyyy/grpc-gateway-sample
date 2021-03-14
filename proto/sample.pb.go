@@ -226,6 +226,100 @@ func (x *CreateUserResponse) GetName() string {
 	return ""
 }
 
+type ProxyRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserName string `protobuf:"bytes,1,opt,name=userName,proto3" json:"userName,omitempty"`
+}
+
+func (x *ProxyRequest) Reset() {
+	*x = ProxyRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_sample_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProxyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProxyRequest) ProtoMessage() {}
+
+func (x *ProxyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_sample_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProxyRequest.ProtoReflect.Descriptor instead.
+func (*ProxyRequest) Descriptor() ([]byte, []int) {
+	return file_proto_sample_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ProxyRequest) GetUserName() string {
+	if x != nil {
+		return x.UserName
+	}
+	return ""
+}
+
+type ProxyResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Response string `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+}
+
+func (x *ProxyResponse) Reset() {
+	*x = ProxyResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_sample_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ProxyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProxyResponse) ProtoMessage() {}
+
+func (x *ProxyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_sample_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProxyResponse.ProtoReflect.Descriptor instead.
+func (*ProxyResponse) Descriptor() ([]byte, []int) {
+	return file_proto_sample_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ProxyResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
 var File_proto_sample_proto protoreflect.FileDescriptor
 
 var file_proto_sample_proto_rawDesc = []byte{
@@ -245,18 +339,28 @@ var file_proto_sample_proto_rawDesc = []byte{
 	0x21, 0x0a, 0x0c, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x65, 0x64, 0x5f, 0x69, 0x64, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x65, 0x64,
 	0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x32, 0xa6, 0x01, 0x0a, 0x08, 0x53, 0x61, 0x79, 0x48, 0x65,
-	0x6c, 0x6c, 0x6f, 0x12, 0x40, 0x0a, 0x04, 0x45, 0x63, 0x68, 0x6f, 0x12, 0x13, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x0d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x07, 0x12, 0x05,
-	0x2f, 0x65, 0x63, 0x68, 0x6f, 0x12, 0x58, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55,
-	0x73, 0x65, 0x72, 0x12, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x15, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0f,
-	0x22, 0x0a, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x73, 0x3a, 0x01, 0x2a, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x2a, 0x0a, 0x0c, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1a, 0x0a, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61,
+	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x75, 0x73, 0x65, 0x72, 0x4e, 0x61,
+	0x6d, 0x65, 0x22, 0x2b, 0x0a, 0x0d, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32,
+	0xee, 0x01, 0x0a, 0x08, 0x53, 0x61, 0x79, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x12, 0x40, 0x0a, 0x04,
+	0x45, 0x63, 0x68, 0x6f, 0x12, 0x13, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c,
+	0x6c, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x0d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x07, 0x12, 0x05, 0x2f, 0x65, 0x63, 0x68, 0x6f, 0x12, 0x58,
+	0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x12, 0x18, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x15, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0f, 0x22, 0x0a, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x75, 0x73, 0x65, 0x72, 0x73, 0x3a, 0x01, 0x2a, 0x12, 0x46, 0x0a, 0x05, 0x50, 0x72, 0x6f, 0x78,
+	0x79, 0x12, 0x13, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x50, 0x72, 0x6f, 0x78, 0x79, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x50,
+	0x72, 0x6f, 0x78, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x12, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x0c, 0x12, 0x0a, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x70, 0x72, 0x6f, 0x78, 0x79,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -271,20 +375,24 @@ func file_proto_sample_proto_rawDescGZIP() []byte {
 	return file_proto_sample_proto_rawDescData
 }
 
-var file_proto_sample_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_sample_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_sample_proto_goTypes = []interface{}{
 	(*HelloRequest)(nil),       // 0: proto.HelloRequest
 	(*HelloResponse)(nil),      // 1: proto.HelloResponse
 	(*CreateUserRequest)(nil),  // 2: proto.CreateUserRequest
 	(*CreateUserResponse)(nil), // 3: proto.CreateUserResponse
+	(*ProxyRequest)(nil),       // 4: proto.ProxyRequest
+	(*ProxyResponse)(nil),      // 5: proto.ProxyResponse
 }
 var file_proto_sample_proto_depIdxs = []int32{
 	0, // 0: proto.SayHello.Echo:input_type -> proto.HelloRequest
 	2, // 1: proto.SayHello.CreateUser:input_type -> proto.CreateUserRequest
-	1, // 2: proto.SayHello.Echo:output_type -> proto.HelloResponse
-	3, // 3: proto.SayHello.CreateUser:output_type -> proto.CreateUserResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: proto.SayHello.Proxy:input_type -> proto.ProxyRequest
+	1, // 3: proto.SayHello.Echo:output_type -> proto.HelloResponse
+	3, // 4: proto.SayHello.CreateUser:output_type -> proto.CreateUserResponse
+	5, // 5: proto.SayHello.Proxy:output_type -> proto.ProxyResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -344,6 +452,30 @@ func file_proto_sample_proto_init() {
 				return nil
 			}
 		}
+		file_proto_sample_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxyRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_sample_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ProxyResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -351,7 +483,7 @@ func file_proto_sample_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_sample_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -379,6 +511,7 @@ const _ = grpc.SupportPackageIsVersion6
 type SayHelloClient interface {
 	Echo(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
 	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
+	Proxy(ctx context.Context, in *ProxyRequest, opts ...grpc.CallOption) (*ProxyResponse, error)
 }
 
 type sayHelloClient struct {
@@ -407,10 +540,20 @@ func (c *sayHelloClient) CreateUser(ctx context.Context, in *CreateUserRequest, 
 	return out, nil
 }
 
+func (c *sayHelloClient) Proxy(ctx context.Context, in *ProxyRequest, opts ...grpc.CallOption) (*ProxyResponse, error) {
+	out := new(ProxyResponse)
+	err := c.cc.Invoke(ctx, "/proto.SayHello/Proxy", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SayHelloServer is the server API for SayHello service.
 type SayHelloServer interface {
 	Echo(context.Context, *HelloRequest) (*HelloResponse, error)
 	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
+	Proxy(context.Context, *ProxyRequest) (*ProxyResponse, error)
 }
 
 // UnimplementedSayHelloServer can be embedded to have forward compatible implementations.
@@ -422,6 +565,9 @@ func (*UnimplementedSayHelloServer) Echo(context.Context, *HelloRequest) (*Hello
 }
 func (*UnimplementedSayHelloServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
+}
+func (*UnimplementedSayHelloServer) Proxy(context.Context, *ProxyRequest) (*ProxyResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Proxy not implemented")
 }
 
 func RegisterSayHelloServer(s *grpc.Server, srv SayHelloServer) {
@@ -464,6 +610,24 @@ func _SayHello_CreateUser_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SayHello_Proxy_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProxyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SayHelloServer).Proxy(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.SayHello/Proxy",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SayHelloServer).Proxy(ctx, req.(*ProxyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _SayHello_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.SayHello",
 	HandlerType: (*SayHelloServer)(nil),
@@ -475,6 +639,10 @@ var _SayHello_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateUser",
 			Handler:    _SayHello_CreateUser_Handler,
+		},
+		{
+			MethodName: "Proxy",
+			Handler:    _SayHello_Proxy_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
