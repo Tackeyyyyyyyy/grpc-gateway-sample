@@ -5,10 +5,16 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"log"
+	"math/rand"
 	"net"
 )
 
 type helloService struct{}
+
+func (hs *helloService) CreateUser(ctx context.Context, request *proto.CreateUserRequest) (*proto.CreateUserResponse, error) {
+	Id := GetRandString(10)
+	return &proto.CreateUserResponse{EncryptedId: Id, Name: request.Name}, nil
+}
 
 func (hs *helloService) Echo(ctx context.Context, req *proto.HelloRequest) (*proto.HelloResponse, error) {
 	return &proto.HelloResponse{
@@ -29,4 +35,14 @@ func Start(port string) {
 		log.Fatalln(err)
 	}
 	return
+}
+
+func GetRandString(n int) string {
+	var letterRunes = []rune("1234567890abcdefghijklmnopqrstuvw")
+
+	b := make([]rune, n)
+	for i := range b {
+		b[i] = letterRunes[rand.Intn(len(letterRunes))]
+	}
+	return string(b)
 }

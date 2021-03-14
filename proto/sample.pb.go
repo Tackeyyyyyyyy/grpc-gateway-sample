@@ -124,6 +124,108 @@ func (x *HelloResponse) GetMessage() string {
 	return ""
 }
 
+type CreateUserRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (x *CreateUserRequest) Reset() {
+	*x = CreateUserRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_sample_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateUserRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateUserRequest) ProtoMessage() {}
+
+func (x *CreateUserRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_sample_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateUserRequest.ProtoReflect.Descriptor instead.
+func (*CreateUserRequest) Descriptor() ([]byte, []int) {
+	return file_proto_sample_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CreateUserRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type CreateUserResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	EncryptedId string `protobuf:"bytes,1,opt,name=encrypted_id,json=encryptedId,proto3" json:"encrypted_id,omitempty"`
+	Name        string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+}
+
+func (x *CreateUserResponse) Reset() {
+	*x = CreateUserResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_proto_sample_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateUserResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateUserResponse) ProtoMessage() {}
+
+func (x *CreateUserResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_sample_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateUserResponse.ProtoReflect.Descriptor instead.
+func (*CreateUserResponse) Descriptor() ([]byte, []int) {
+	return file_proto_sample_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *CreateUserResponse) GetEncryptedId() string {
+	if x != nil {
+		return x.EncryptedId
+	}
+	return ""
+}
+
+func (x *CreateUserResponse) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 var File_proto_sample_proto protoreflect.FileDescriptor
 
 var file_proto_sample_proto_rawDesc = []byte{
@@ -136,12 +238,25 @@ var file_proto_sample_proto_rawDesc = []byte{
 	0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x29, 0x0a, 0x0d, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x32, 0x4c, 0x0a, 0x08, 0x53, 0x61, 0x79, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x12, 0x40, 0x0a, 0x04,
-	0x45, 0x63, 0x68, 0x6f, 0x12, 0x13, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c,
-	0x6c, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x0d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x07, 0x12, 0x05, 0x2f, 0x65, 0x63, 0x68, 0x6f, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x22, 0x27, 0x0a, 0x11, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x4b, 0x0a, 0x12, 0x43, 0x72, 0x65,
+	0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x21, 0x0a, 0x0c, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x65, 0x64, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x65, 0x6e, 0x63, 0x72, 0x79, 0x70, 0x74, 0x65, 0x64,
+	0x49, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x32, 0xa6, 0x01, 0x0a, 0x08, 0x53, 0x61, 0x79, 0x48, 0x65,
+	0x6c, 0x6c, 0x6f, 0x12, 0x40, 0x0a, 0x04, 0x45, 0x63, 0x68, 0x6f, 0x12, 0x13, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x0d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x07, 0x12, 0x05,
+	0x2f, 0x65, 0x63, 0x68, 0x6f, 0x12, 0x58, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55,
+	0x73, 0x65, 0x72, 0x12, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x55, 0x73, 0x65, 0x72, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x55, 0x73, 0x65, 0x72,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x15, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0f,
+	0x22, 0x0a, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x73, 0x3a, 0x01, 0x2a, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -156,16 +271,20 @@ func file_proto_sample_proto_rawDescGZIP() []byte {
 	return file_proto_sample_proto_rawDescData
 }
 
-var file_proto_sample_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_proto_sample_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_proto_sample_proto_goTypes = []interface{}{
-	(*HelloRequest)(nil),  // 0: proto.HelloRequest
-	(*HelloResponse)(nil), // 1: proto.HelloResponse
+	(*HelloRequest)(nil),       // 0: proto.HelloRequest
+	(*HelloResponse)(nil),      // 1: proto.HelloResponse
+	(*CreateUserRequest)(nil),  // 2: proto.CreateUserRequest
+	(*CreateUserResponse)(nil), // 3: proto.CreateUserResponse
 }
 var file_proto_sample_proto_depIdxs = []int32{
 	0, // 0: proto.SayHello.Echo:input_type -> proto.HelloRequest
-	1, // 1: proto.SayHello.Echo:output_type -> proto.HelloResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: proto.SayHello.CreateUser:input_type -> proto.CreateUserRequest
+	1, // 2: proto.SayHello.Echo:output_type -> proto.HelloResponse
+	3, // 3: proto.SayHello.CreateUser:output_type -> proto.CreateUserResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -201,6 +320,30 @@ func file_proto_sample_proto_init() {
 				return nil
 			}
 		}
+		file_proto_sample_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUserRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_proto_sample_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateUserResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -208,7 +351,7 @@ func file_proto_sample_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_proto_sample_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -235,6 +378,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SayHelloClient interface {
 	Echo(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
+	CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error)
 }
 
 type sayHelloClient struct {
@@ -254,9 +398,19 @@ func (c *sayHelloClient) Echo(ctx context.Context, in *HelloRequest, opts ...grp
 	return out, nil
 }
 
+func (c *sayHelloClient) CreateUser(ctx context.Context, in *CreateUserRequest, opts ...grpc.CallOption) (*CreateUserResponse, error) {
+	out := new(CreateUserResponse)
+	err := c.cc.Invoke(ctx, "/proto.SayHello/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SayHelloServer is the server API for SayHello service.
 type SayHelloServer interface {
 	Echo(context.Context, *HelloRequest) (*HelloResponse, error)
+	CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error)
 }
 
 // UnimplementedSayHelloServer can be embedded to have forward compatible implementations.
@@ -265,6 +419,9 @@ type UnimplementedSayHelloServer struct {
 
 func (*UnimplementedSayHelloServer) Echo(context.Context, *HelloRequest) (*HelloResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Echo not implemented")
+}
+func (*UnimplementedSayHelloServer) CreateUser(context.Context, *CreateUserRequest) (*CreateUserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateUser not implemented")
 }
 
 func RegisterSayHelloServer(s *grpc.Server, srv SayHelloServer) {
@@ -289,6 +446,24 @@ func _SayHello_Echo_Handler(srv interface{}, ctx context.Context, dec func(inter
 	return interceptor(ctx, in, info, handler)
 }
 
+func _SayHello_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SayHelloServer).CreateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.SayHello/CreateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SayHelloServer).CreateUser(ctx, req.(*CreateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _SayHello_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.SayHello",
 	HandlerType: (*SayHelloServer)(nil),
@@ -296,6 +471,10 @@ var _SayHello_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Echo",
 			Handler:    _SayHello_Echo_Handler,
+		},
+		{
+			MethodName: "CreateUser",
+			Handler:    _SayHello_CreateUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
