@@ -40,7 +40,6 @@ message CreateUserResponse {
 }
 
 message ProxyRequest {
-  string userName = 1;
 }
 
 message ProxyResponse {
