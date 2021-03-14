@@ -1,6 +1,6 @@
 # grpc-gateway-sample
 
-gRPC-GatewayをgRPCサーバをRESTから呼び出すサンプル。
+gRPC-Gatewayを使ってgRPCサーバをRESTから呼び出すサンプル。
 
 
 ## USAGE
